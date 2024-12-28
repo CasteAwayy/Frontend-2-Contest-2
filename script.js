@@ -33,7 +33,7 @@ function handlePasswordChange()
 
 function handleSubmit(e){
     e.preventDefault();
-    if(!passClr && !emailClr) return;
+    if(!passClr || !emailClr) return;
     confirm('Are You Sure!') ? alert('successful signup!') : reset();
 }
 
