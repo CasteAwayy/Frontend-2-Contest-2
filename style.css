@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+* {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+
+}
+
+:root{
+  --error-clr : #FF0000;
+  --clear-clr : #219F35;
+  --border-radius : 5px;
+  --background-clr : #FFFFFF;
+
+  font-size: 75%;         /*    12px   */
+  font-family: 'Inter', Arial, Helvetica, sans-serif;
+  font-weight: 400;
+}
+
+body{
+  background-color: var(--background-clr);
+  display:  flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100dvh;
+}
+
+.form{
+  border: 1px solid black;
+  width: 450px;
+  max-width: 80%;
+  padding: 20px;
+  border-radius: var(--border-radius);
+}
+
+label + input{
+  display:  block;
+  margin-top: 10px;
+  width: 75%;
+  padding: 6px;
+  border-radius: var(--border-radius);
+  border: 1px solid black;
+}
+
+span{
+  display: block;
+  margin: 10px 0 15px 0;
+}
+
+.error{
+  color: var(--error-clr);
+}
+
+.clear{
+  color: var(--clear-clr);
+}
+
+[class$='email']
+{
+  margin-bottom: 25px;
+}
+[class$='password']
+{
+  margin-bottom: 25px;
+}
+
+.btn{
+   border: 1px solid black;
+   padding: 5px 42px;
+}
+
+.btn-submit{
+  border-radius: var(--border-radius);
+  background-color: transparent;
+}
