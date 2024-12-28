@@ -7,14 +7,14 @@ const passwordInput = document.querySelector("#password");
 const emailErrorContainer = document.querySelector(".section-email span");
 const passwordErrorContainer = document.querySelector(".section-password span");
 const allClearContainer = document.querySelector(".form .clear");
-const form = document.querySelector('.form');
+const btnSubmit = document.querySelector('.btn-submit');
 
 let emailClr;
 let passClr;
 
 emailInput.addEventListener("change",handleEmailChange);
 passwordInput.addEventListener("change",handlePasswordChange);
-form.addEventListener('submit',handleSubmit);
+btnSubmit.addEventListener('click',handleSubmit);
 
 
 function handleEmailChange()
@@ -33,8 +33,8 @@ function handlePasswordChange()
 
 function handleSubmit(e){
     e.preventDefault();
+    if(!passClr && !emailClr) return;
     confirm('Are You Sure!') ? alert('successful signup!') : reset();
-    window.location.reload();
 }
 
 function emailErrorUtilHelper(emailValue)
@@ -59,4 +59,8 @@ function checkAllClear(emailClr, passClr) {
   allClearContainer.textContent = (emailClr && passClr) ? clearTxt : '';
 }
 
-const reset = ()=>  emailInput.value = passwordInput.value = '';
+const reset = ()=>  { 
+    emailInput.value = passwordInput.value = '';
+    allClearContainer.textContent = '';
+    emailClr = passClr = false;
+ }
